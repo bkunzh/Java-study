@@ -5,3 +5,7 @@
     - [Java8 lambda表达式10个示例](http://www.importnew.com/16436.html)
 
         > 实践代码[Java8-lambda](code/Java8-lambda)
+
+3. JDBC批处理
+    - 实践代码[jdbc-batch-operate](code/jdbc-batch-operate)
+    - [笔记](code/jdbc-batch-operate/note.md)
