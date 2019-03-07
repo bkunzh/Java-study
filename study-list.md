@@ -12,6 +12,7 @@
 另外，该场景下，并非必须使用 ThreadLocal ，其它方式完全可以实现同样的效果，只是 ThreadLocal 使得实现更简洁。
 # 2. Java8 lambda表达式
 - [Java8 lambda表达式10个示例](http://www.importnew.com/16436.html)
+- <http://blog.oneapm.com/apm-tech/226.html>
 
 > 实践代码[Java8-lambda](code/Java8-lambda)
 

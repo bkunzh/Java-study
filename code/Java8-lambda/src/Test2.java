@@ -16,6 +16,8 @@ public class Test2 {
         list.add("ca");
         list.add("11");
 
+        list.forEach(n -> System.out.println(n));
+        list.forEach(System.out::println);
         //1
 //        Collections.sort(list);
 
