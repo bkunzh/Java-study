@@ -28,14 +28,16 @@
 ？？类、方法等的泛型，一直不大清楚，有时间要弄懂
 
 # 5. java.util.concurrent包的3个类：CountDownLatch/CyclicBarrier/Semaphore
-？？待实践
+？？待实践<https://www.cnblogs.com/dolphin0520/p/3920397.html>
+<http://www.importnew.com/15731.html>
+> 参考资料<https://www.cnblogs.com/dolphin0520/p/3920397.html>、谷歌搜索java CountDownLatch
 
-> 参考资料<https://www.cnblogs.com/dolphin0520/p/3920397.html>
-
-- 1）CountDownLatch和CyclicBarrier都能够实现线程之间的等待，只不过它们侧重点不同：
-    - CountDownLatch一般用于某个线程A等待若干个其他线程执行完任务之后，它才执行；
-    - 而CyclicBarrier一般用于一组线程互相等待至某个状态，然后这一组线程再同时执行；
-    - 另外，CountDownLatch是不能够重用的，而CyclicBarrier是可以重用的。
-- 2）Semaphore其实和锁有点类似，它一般用于控制对某组资源的访问权限。
+[笔记](code\concurrent\note.md)
 
 
+
+
+
+？？待学习：Java并发编程：线程池的使用<https://www.cnblogs.com/dolphin0520/p/3932921.html><https://www.google.com.hk/search?lr=lang_zh-CN&newwindow=1&tbs=lr%3Alang_1zh-CN&source=hp&ei=e96DXLCSAoaJmAXg_7u4Ag&q=java+%E7%BA%BF%E7%A8%8B%E6%B1%A0&btnK=Google+Search&oq=java+%E7%BA%BF%E7%A8%8B%E6%B1%A0&gs_l=psy-ab.3..0i203l10.2690.5983..6112...0.0..0.533.4077.0j11j5j1j0j1......0....1..gws-wiz.....0..35i39j0.z7OzVsUQGp8>
+
+<http://www.jasongj.com/java/threadlocal/>继续threadlocal
