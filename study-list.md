@@ -32,7 +32,7 @@
 <http://www.importnew.com/15731.html>
 > 参考资料<https://www.cnblogs.com/dolphin0520/p/3920397.html>、谷歌搜索java CountDownLatch
 
-[笔记](code\concurrent\note.md)
+- [笔记](code/concurrent/note.md)
 
 
 
