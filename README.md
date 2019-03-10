@@ -18,7 +18,7 @@
 - 有时间看[深入lambda：方法引用（类、实例）](https://www.cnblogs.com/figure9/p/java-8-lambdas-insideout-language-features.html)
 
 > 实践代码[Java8-lambda](code/Java8-lambda)
-- [笔记](code\Java8-lambda\note.md)
+- [笔记](code/Java8-lambda/note.md)
 
 # 3. JDBC批处理
 - 实践代码[jdbc-batch-operate](code/jdbc-batch-operate)
