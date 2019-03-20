@@ -3,7 +3,9 @@ import java.util.concurrent.CountDownLatch;
 /**
  * Created by zhbk on 2019/3/20.
  * 见http://www.jasongj.com/java/threadlocal/
- * 分析的结果：
+ */
+/**
+分析的结果：
  Thread name:thread-1 , ThreadLocal hashcode:0xxx1, Instance hashcode:0xyy1, Value:0
  Thread name:thread-1 , ThreadLocal hashcode:0xxx1, Instance hashcode:0xyy1, Value:01
  Thread name:thread-1 , ThreadLocal hashcode:0xxx1, Instance hashcode:0xyy1, Value:012
@@ -44,6 +46,11 @@ import java.util.concurrent.CountDownLatch;
  Set, Thread name:thread - 3 , ThreadLocal hashcode:2056753021,  Instance hashcode:243889051, Value:hello world
  Set, Thread name:thread - 2 , ThreadLocal hashcode:2056753021,  Instance hashcode:194948663, Value:hello world
  继续...
+ */
+/*
+1. 不同线程都是同一个ThreadLocal变量，因为是类静态变量
+2. 不同线程的threadlocal.get()的实例不同
+3. threadlocal.set(T)替换当前线程的threadlocal.get()实例
  */
 public class ThreadLocalDemo {
 

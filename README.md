@@ -5,6 +5,8 @@
 - [3. JDBC批处理](#3-jdbc批处理)
 - [4. Java泛型](#4-java泛型)
 - [5. java.util.concurrent包的3个类](#5-javautilconcurrent包的3个类)
+- [99. 一些说明](#99-一些说明)
+    - [用IDEA的md编辑器，在` ```java``` `中的代码片段会报错。](#用idea的md编辑器在-java-中的代码片段会报错)
 
 <!-- /TOC -->
 # 1. ThreadLocal原理和适用场景
@@ -31,11 +33,6 @@
 CountDownLatch/CyclicBarrier/Semaphore
 - [笔记](code/concurrent/note.md)
 
-
-
-
-
-？？待学习：Java并发编程：线程池的使用<https://www.cnblogs.com/dolphin0520/p/3932921.html><https://www.google.com.hk/search?lr=lang_zh-CN&newwindow=1&tbs=lr%3Alang_1zh-CN&source=hp&ei=e96DXLCSAoaJmAXg_7u4Ag&q=java+%E7%BA%BF%E7%A8%8B%E6%B1%A0&btnK=Google+Search&oq=java+%E7%BA%BF%E7%A8%8B%E6%B1%A0&gs_l=psy-ab.3..0i203l10.2690.5983..6112...0.0..0.533.4077.0j11j5j1j0j1......0....1..gws-wiz.....0..35i39j0.z7OzVsUQGp8>
-
-<http://www.jasongj.com/java/threadlocal/>继续threadlocal
-
+# 99. 一些说明
+## 用IDEA的md编辑器，在` ```java``` `中的代码片段会报错。
+未找到很好的不报错的解决方法。所以在IDEA中编辑md文件时，用` ```jav``` `代替` ```java``` `，等到写好后，再用` ```java `替换` ```jav``` `即可。
