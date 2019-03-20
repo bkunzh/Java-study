@@ -37,4 +37,4 @@ CountDownLatch/CyclicBarrier/Semaphore
 
 # 99. 一些说明
 ## 用IDEA的md编辑器，在` ```java``` `中的代码片段会报错。
-未找到很好的不报错的解决方法。所以在IDEA中编辑md文件时，用` ```jav``` `代替` ```java``` `，等到写好后，再用` ```java `替换` ```jav``` `即可。
+未找到很好的不报错的解决方法。所以在IDEA中编辑md文件时，用` ```jav``` `代替` ```java``` `，等到写好后，再用` ```java `替换` ```jav `即可。
