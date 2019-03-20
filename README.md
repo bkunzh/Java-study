@@ -4,7 +4,7 @@
 - [2. Java8 lambda表达式](#2-java8-lambda表达式)
 - [3. JDBC批处理](#3-jdbc批处理)
 - [4. Java泛型](#4-java泛型)
-- [5. java.util.concurrent包的3个类：CountDownLatch/CyclicBarrier/Semaphore](#5-javautilconcurrent包的3个类countdownlatchcyclicbarriersemaphore)
+- [5. java.util.concurrent包的3个类](#5-javautilconcurrent包的3个类)
 
 <!-- /TOC -->
 # 1. ThreadLocal原理和适用场景
@@ -27,7 +27,8 @@
 # 4. Java泛型
 ？？类、方法等的泛型，一直不大清楚，有时间要弄懂
 
-# 5. java.util.concurrent包的3个类：CountDownLatch/CyclicBarrier/Semaphore
+# 5. java.util.concurrent包的3个类
+CountDownLatch/CyclicBarrier/Semaphore
 - [笔记](code/concurrent/note.md)
 
 
