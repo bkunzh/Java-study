@@ -5,20 +5,20 @@
 
 # 2. ThreadLocal实现
 1. **Thread**类中有一个ThreadLocalMap的实例变量threadLocals，键是threadLocal变量，包权限
-```jav
+```java
     ThreadLocal.ThreadLocalMap threadLocals = null;
 ```
 2. ThreadLocal
 - 在ThreadLocal中，通过Thread.currentThread().threadLocals即可获得ThreadLocalMap实例
 > `ThreadLocalMap m = getMap(Thread.currentThread());`
 - ThreadLocal.getMap
-```jav
+```java
     ThreadLocalMap getMap(Thread t) {
         return t.threadLocals;
     }
 ```
 - ThreadLocal.get实现如下：
-```jav
+```java
     public T get() {
         Thread t = Thread.currentThread();
         ThreadLocalMap map = getMap(t);
@@ -36,7 +36,7 @@
     }
 ```
 - ThreadLocal.setInitialValue
-```jav
+```java
     private T setInitialValue() {
         //设置初始值
         T value = initialValue(); 
@@ -51,13 +51,13 @@
     
 ```
 - ThreadLocal.initialValue，可以重写该方法，指定初始值
-```jav
+```java
     protected T initialValue() {
         return null;
     }
 ```
 - ThreadLocal.set实现如下：
-```jav
+```java
     public void set(T value) {
         Thread t = Thread.currentThread();
         ThreadLocalMap map = getMap(t);
@@ -70,9 +70,9 @@
     
 ```
 - ThreadLocal.createMap
-```jav
+```java
 //创建ThreadLocalMap，赋值给t.threadLocals
-void createMap(Thread t, T firstValue) {
+    void createMap(Thread t, T firstValue) {
         t.threadLocals = new ThreadLocalMap(this, firstValue);
     }
 ```
