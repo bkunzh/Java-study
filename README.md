@@ -15,7 +15,7 @@
 - **ThreadLocal 适用于每个线程需要自己独立的实例，且该实例需要在多个方法中被使用，也即变量在线程间隔离而在方法或类间共享的场景。**
 
 - 原理图
-![](imgs/ThreadLocal-Thread.png)
+> ![](imgs/ThreadLocal-Thread.png)
 - 实践代码[threadlocal](code/threadlocal)
 - [笔记](code/threadlocal/note.md)
 - [threadlocal使用场景](code/threadlocal/note.md#5-threadlocal使用场景)
