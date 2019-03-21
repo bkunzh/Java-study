@@ -11,6 +11,9 @@
         - [ThreadLocal实现该功能](#threadlocal实现该功能)
     - [3.2 解决线程安全问题](#32-解决线程安全问题)
 - [4. 总结](#4-总结)
+- [5. ThreadLocal使用场景](#5-threadlocal使用场景)
+    - [5.1 使用ThreadLocal<SimpleDateFormat>使SimpleDateFormat线程安全](#51-使用threadlocalsimpledateformat使simpledateformat线程安全)
+    - [5.2 mybatis每一个线程一个SqlSession](#52-mybatis每一个线程一个sqlsession)
 - [99. 参考](#99-参考)
 
 <!-- /TOC -->
@@ -205,6 +208,59 @@ public class SessionHandler {
   - ThreadLocalMap的key为弱引用
   > ![](imgs/references.jpg)
   - ThreadLocalMap在执行set和rehash方法时，对key为null（即entity.get()==null）的，会将entry的value设置为null，将Entry[]对应元素置为null，size减1
+
+# 5. ThreadLocal使用场景
+## 5.1 使用ThreadLocal<SimpleDateFormat>使SimpleDateFormat线程安全
+- [实践见DateUtilOld/DateUtilNew](src/)
+- [总结出工具类ConcurrentDateUtil](https://github.com/bkunzhang/common-library)
+
+## 5.2 mybatis每一个线程一个SqlSession
+```java
+public class mybatisUtil {
+	private static ThreadLocal<SqlSession> threadSession = new ThreadLocal<SqlSession>();
+	private static SqlSessionFactory SqlSessionFactory;
+	/**
+	 * 
+	 * 加载配置文件
+	 */
+	static{
+		try{
+			Reader reader = Resources.getResourceAsReader("mybatis.cfg.xml");
+			SqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+		}catch(IOException e){
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+	/**
+	 * 
+	 * 获取SqlSession
+	 * 
+	 * @return
+	 */
+	public static SqlSession getSqlSession(){
+		//从当前线程获取
+		SqlSession sqlSession = threadSession.get();
+		if(sqlSession == null){
+			sqlSession = SqlSessionFactory.openSession();
+			//将sqlSession与当前线程绑定
+			threadSession.set(sqlSession);
+		}
+		return sqlSession;
+	}
+	/**
+	 * 关闭Session
+	 */
+	public static void closeSqlSession(){
+		//从当前线程获取
+		SqlSession sqlSession = threadSession.get();
+		if(sqlSession != null){
+			sqlSession.close();
+			threadSession.remove();
+		}
+	}
+
+```
 
 # 99. 参考
 - [Java进阶（七）正确理解Thread Local的原理与适用场景](http://www.jasongj.com/java/threadlocal/)

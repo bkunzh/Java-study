@@ -14,8 +14,11 @@
 - ThreadLocal 并不解决线程间共享数据的问题
 - **ThreadLocal 适用于每个线程需要自己独立的实例，且该实例需要在多个方法中被使用，也即变量在线程间隔离而在方法或类间共享的场景。**
 
+- 原理图
+![](imgs/ThreadLocal-Thread.png)
 - 实践代码[threadlocal](code/threadlocal)
 - [笔记](code/threadlocal/note.md)
+- [threadlocal使用场景](code/threadlocal/note.md#5-threadlocal使用场景)
 
 # 2. Java8 lambda表达式
 - [Java8 lambda表达式10个示例](http://www.importnew.com/16436.html)
