@@ -213,6 +213,8 @@ public class SessionHandler {
 ## 5.1 使用ThreadLocal<SimpleDateFormat>使SimpleDateFormat线程安全
 - [实践见DateUtilOld/DateUtilNew](src/)
 - [总结出工具类ConcurrentDateUtil](https://github.com/bkunzhang/common-library)
+- http://blog.jrwang.me/2016/java-simpledateformat-multithread-threadlocal/
+- [SimpleDateFormat线程不安全原因](https://github.com/bkunzhang/notes/issues/6#issuecomment-475179961)
 
 ## 5.2 mybatis每一个线程一个SqlSession
 ```java
