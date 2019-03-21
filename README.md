@@ -11,8 +11,9 @@
 <!-- /TOC -->
 # 1. ThreadLocal原理和适用场景
 - [Java进阶（七）正确理解Thread Local的原理与适用场景](http://www.jasongj.com/java/threadlocal/)
->**ThreadLocal 适用于每个线程需要自己独立的实例且该实例需要在多个方法中被使用，也即变量在线程间隔离而在方法或类间共享的场景。**
-另外，该场景下，并非必须使用 ThreadLocal ，其它方式完全可以实现同样的效果，只是 ThreadLocal 使得实现更简洁。
+- ThreadLocal 并不解决线程间共享数据的问题
+- **ThreadLocal 适用于每个线程需要自己独立的实例且该实例需要在多个方法中被使用，也即变量在线程间隔离而在方法或类间共享的场景。**
+- 另外，该场景下，并非必须使用 ThreadLocal ，其它方式完全可以实现同样的效果(可以在线程内部构建一个单独的实例;通过方法间引用传递的形式实现)，只是 ThreadLocal 使得实现更简洁。
 - 实践代码[threadlocal](code/threadlocal)
 - [笔记](code/threadlocal/note.md)
 

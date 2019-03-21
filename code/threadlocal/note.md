@@ -1,3 +1,13 @@
+<!-- TOC -->
+
+- [1. 读代码ThreadLocalDemo结论](#1-读代码threadlocaldemo结论)
+- [2. ThreadLocal实现](#2-threadlocal实现)
+- [3. ThreadLocal案例](#3-threadlocal案例)
+    - [3.1 不使用 ThreadLocal](#31-不使用-threadlocal)
+    - [3.2 ThreadLocal实现该功能](#32-threadlocal实现该功能)
+- [4. 总结](#4-总结)
+
+<!-- /TOC -->
 # 1. 读代码ThreadLocalDemo结论
 1. 不同线程都是同一个ThreadLocal变量，因为是类静态变量
 2. 不同线程的threadlocal.get()的实例不同
@@ -76,5 +86,96 @@
         t.threadLocals = new ThreadLocalMap(this, firstValue);
     }
 ```
+# 3. ThreadLocal案例
+## 3.1 不使用 ThreadLocal
+```java
+public class SessionHandler {
+
+  @Data
+  public static class Session {
+    private String id;
+    private String user;
+    private String status;
+  }
+
+  public Session createSession() {
+    return new Session();
+  }
+
+  public String getUser(Session session) {
+    return session.getUser();
+  }
+
+  public String getStatus(Session session) {
+    return session.getStatus();
+  }
+
+  public void setStatus(Session session, String status) {
+    session.setStatus(status);
+  }
+
+  public static void main(String[] args) {
+    new Thread(() -> {
+      SessionHandler handler = new SessionHandler();
+      Session session = handler.createSession();
+      handler.getStatus(session);
+      handler.getUser(session);
+      handler.setStatus(session, "close");
+      handler.getStatus(session);
+    }).start();
+  }
+}
+```
+> 该方法是可以实现需求的。但是每个需要使用 Session 的地方，都需要显式传递 Session 对象，方法间耦合度较高。
+
+## 3.2 ThreadLocal实现该功能
+```java
+public class SessionHandler {
+
+  public static ThreadLocal<Session> session = new ThreadLocal<Session>();
+
+  @Data
+  public static class Session {
+    private String id;
+    private String user;
+    private String status;
+  }
+
+  public void createSession() {
+    session.set(new Session());
+  }
+
+  public String getUser() {
+    return session.get().getUser();
+  }
+
+  public String getStatus() {
+    return session.get().getStatus();
+  }
+
+  public void setStatus(String status) {
+    session.get().setStatus(status);
+  }
+
+  public static void main(String[] args) {
+    new Thread(() -> {
+      SessionHandler handler = new SessionHandler();
+      handler.getStatus();
+      handler.getUser();
+      handler.setStatus("close");
+      handler.getStatus();
+    }).start();
+  }
+}
+```
+> 可通过在线程内创建局部变量可实现每个线程有自己的实例，使用静态变量可实现变量在方法间的共享。但如果要同时满足变量在线程间的隔离与方法间的共享，ThreadLocal再合适不过。
+
+# 4. 总结
+- ThreadLocal 并不解决线程间共享数据的问题
+- ThreadLocal 通过隐式的在不同线程内创建独立实例副本避免了实例线程安全的问题
+- 每个线程持有一个 Map 并维护了 ThreadLocal 对象与具体实例的映射，该 Map 由于只被持有它的线程访问，故不存在线程安全以及锁的问题
+- ThreadLocal 适用于变量在线程间隔离且在方法间共享的场景
+- ??暂时不看：防止内存泄漏:弱引用、ThreadLocalMap.replaceStaleEntry方法
+
 
 
