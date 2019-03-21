@@ -14,10 +14,12 @@
 3. threadlocal.set(T)替换当前线程的threadlocal.get()实例
 
 # 2. ThreadLocal实现
-1. **Thread**类中有一个ThreadLocalMap的实例变量threadLocals，键是threadLocal变量，包权限
+1. **Thread**类中有一个ThreadLocalMap的实例变量threadLocals，包权限，键是ThreadLocal变量
+> java5/java8都是这种实现，即Thread维护ThreadLocal与实例的映射，该方案没有锁的问题，每个线程访问某 ThreadLocal 变量后，都会在自己的 Map 内维护该 ThreadLocal 变量与具体实例的映射
 ```java
     ThreadLocal.ThreadLocalMap threadLocals = null;
 ```
+> 至于另一种方案ThreadLocal维护线程与实例的映射，增加线程与减少线程均需要写Map，要保证线程安全，需要锁，jdk没有采用这种方案
 2. ThreadLocal
 - 在ThreadLocal中，通过Thread.currentThread().threadLocals即可获得ThreadLocalMap实例
 > `ThreadLocalMap m = getMap(Thread.currentThread());`
