@@ -4,7 +4,6 @@
 - [2. Java8 lambda表达式](#2-java8-lambda表达式)
 - [3. JDBC批处理](#3-jdbc批处理)
 - [4. 弱引用](#4-弱引用)
-- [4. Java泛型](#4-java泛型)
 - [5. java.util.concurrent包的3个类](#5-javautilconcurrent包的3个类)
 - [99. 一些说明](#99-一些说明)
     - [用IDEA的md编辑器，在` ```java``` `中的代码片段会报错。](#用idea的md编辑器在-java-中的代码片段会报错)
@@ -38,9 +37,6 @@ Java中的弱引用具体指的是java.lang.ref.WeakReference<T>类
 - http://www.importnew.com/21206.html
 - https://www.cnblogs.com/dolphin0520/p/3784171.html
 - [实践](code/reference)
-
-# 4. Java泛型
-？？类、方法等的泛型，一直不大清楚，有时间要弄懂
 
 # 5. java.util.concurrent包的3个类
 CountDownLatch/CyclicBarrier/Semaphore
