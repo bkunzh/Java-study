@@ -18,9 +18,11 @@ public class Writer extends Thread {
     public void run() {
         System.out.println("线程"+Thread.currentThread().getName()+"正在写入数据...");
         try {
-            Thread.sleep(5000);      //以睡眠来模拟写入数据操作
+            long time = (long) (5000 * Math.random());
+            System.out.println("线程"+Thread.currentThread().getName()+"睡眠时间:"+time);
+            Thread.sleep(time);      //以睡眠来模拟写入数据操作
             System.out.println("线程"+Thread.currentThread().getName()+"写入数据完毕，等待其他线程写入完毕");
-            //等待
+            //互相等待
             cyclicBarrier.await();
         } catch (InterruptedException e) {
             e.printStackTrace();

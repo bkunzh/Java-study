@@ -63,6 +63,7 @@ public class Test3 {
                     System.out.println("打断？"); //没执行到这
                     e.printStackTrace();
                 }
+                System.out.println("----线程" + i + "开始----");
                 new Writer2(barrier).start();
             }
         }
@@ -76,30 +77,35 @@ public class Test3 {
         @Override
         public void run() {
             System.out.println("线程"+Thread.currentThread().getName()+"正在写入数据...");
+            long start = 0;
             try {
                 Thread.sleep(5000);      //以睡眠来模拟写入数据操作
                 System.out.println("线程"+Thread.currentThread().getName()+"写入数据完毕，等待其他线程写入完毕");
+                //计算await时间
+                start = System.currentTimeMillis();
                 try {
                     cyclicBarrier.await(2000, TimeUnit.MILLISECONDS);
                 } catch (TimeoutException e) {
                     e.printStackTrace();
-                    System.out.println("1:await之后,threadName=" + Thread.currentThread().getName()
-                            + "; e.getClass()=" + e.getClass());
+//                    System.out.println("1:await之后,threadName=" + Thread.currentThread().getName()
+//                            + "; e.getClass()=" + e.getClass());
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                    System.out.println("2:await之后,threadName=" + Thread.currentThread().getName()
-                            + "; e.getClass()=" + e.getClass());
+//                    System.out.println("2:await之后,threadName=" + Thread.currentThread().getName()
+//                            + "; e.getClass()=" + e.getClass());
 
                 }catch(BrokenBarrierException e){
                     e.printStackTrace();
-                    System.out.println("3:await之后,threadName=" + Thread.currentThread().getName()
-                            + "; e.getClass()=" + e.getClass());
+//                    System.out.println("3:await之后,threadName=" + Thread.currentThread().getName()
+//                            + "; e.getClass()=" + e.getClass());
 
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                System.out.println("aaaaa");
             }
+            System.out.println("线程" + Thread.currentThread().getName() + " await等待时间" + (System.currentTimeMillis() - start) + "毫秒");
             System.out.println(Thread.currentThread().getName()+"所有线程写入完毕，继续处理其他任务...");
         }
     }
