@@ -10,6 +10,7 @@ public class TestDefaultFunction {
     }
 
 
+    @FunctionalInterface
     static interface I {
         String f(String s);
 
