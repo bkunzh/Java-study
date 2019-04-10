@@ -19,7 +19,7 @@ public class TestThis {
         I i1 = new I() {
             public void f(String s) {
                 System.out.println("匿名类:");
-//                找不到n
+//                找不到n，编译报错
 //               System.out.println(this.n);
                 System.out.println(s);
             }
