@@ -5,6 +5,7 @@
 - [3. JDBC批处理](#3-jdbc批处理)
 - [4. 弱引用](#4-弱引用)
 - [5. java.util.concurrent包的3个类](#5-javautilconcurrent包的3个类)
+- [6. 一些疑问的解答代码](#6-一些疑问的解答代码)
 - [99. 一些说明](#99-一些说明)
 
 <!-- /TOC -->
@@ -40,6 +41,9 @@ Java中的弱引用具体指的是java.lang.ref.WeakReference<T>类
 # 5. java.util.concurrent包的3个类
 CountDownLatch/CyclicBarrier/Semaphore
 - [笔记](code/concurrent/note.md)
+
+# 6. 一些疑问的解答代码
+[跳转](code/problems/readme.md)
 
 # 99. 一些说明
 - 用IDEA的md编辑器，在` ```java``` `中的代码片段会报错。
