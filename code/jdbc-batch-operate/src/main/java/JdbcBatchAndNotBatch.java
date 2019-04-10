@@ -33,7 +33,7 @@ public class JdbcBatchAndNotBatch {
         try {
             conn = DriverManager.getConnection(url1);//将所有连接信息都放在URL中
             truncateTableData();
-            String sqlInsert = "insert into t_user(id,name,sex,age) value(null,?,?,?)";
+            String sqlInsert = "insert into t_user(id,name,sex,age,create_date) value(null,?,?,?,now())";
             PreparedStatement preStatementInsert = conn.prepareStatement(sqlInsert);
             conn.setAutoCommit(false);//关闭自动提交
 
@@ -65,7 +65,7 @@ public class JdbcBatchAndNotBatch {
         try {
             conn = DriverManager.getConnection(url1);//将所有连接信息都放在URL中
             truncateTableData();
-            String sqlInsert = "insert into t_user(id,name,sex,age) value(null,?,?,?)";
+            String sqlInsert = "insert into t_user(id,name,sex,age,create_date) value(null,?,?,?,now())";
             PreparedStatement preStatementInsert = conn.prepareStatement(sqlInsert);
             //不打开这个选项，每一条都会提交一下，打开和批量提交时间差距不明显
 //            conn.setAutoCommit(false);//关闭自动提交
