@@ -15,6 +15,7 @@
         <module>code/jdbc-batch-operate</module>
         <module>code/threadlocal</module>
         <module>code/reference</module>
+        <module>code/java-util</module>
     </modules>
 
 
