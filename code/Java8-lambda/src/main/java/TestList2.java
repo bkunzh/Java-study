@@ -5,7 +5,7 @@ import java.util.function.Function;
  * Created by zhbk on 2019/3/8.
  * lambda方法引用：实例上的实例方法引用instanceReference::methodName、类型上的实例方法引用ClassName::methodName
  */
-public class Test3 {
+public class TestList2 {
 
     public static void main(String[] args) {
 //        t1();

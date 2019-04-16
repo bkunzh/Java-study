@@ -7,20 +7,20 @@ public class TestFunctionRefer {
     public static void main(String[] args) {
 
         //1
-//        Converter<String, Integer> converter = (from) -> Integer.valueOf(from);
-//        Integer converted = converter.convert("123");
-//        System.out.println(converted);    // 123
+        Converter<String, Integer> converter = (from) -> Integer.valueOf(from);
+        Integer converted = converter.convert("123");
+        System.out.println(converted);    // 123
 
         //2 Integer::valueOf 静态方法引用
-//        Converter<String, Integer> converter = Integer::valueOf;
-//        Integer converted = converter.convert("123");
-//        System.out.println(converted);    // 123
+        Converter<String, Integer> converter2 = Integer::valueOf;
+        Integer converted2 = converter2.convert("123");
+        System.out.println(converted2);    // 123
 
         //3 something::startsWith 对象的方法进行引用
-//        Something something = new Something();
-//        Converter<String, String> converter = something::startsWith;
-//        String converted = converter.convert("Java");
-//        System.out.println(converted);    // "J"
+        Something something = new Something();
+        Converter<String, String> converter3 = something::startsWith;
+        String converted3 = converter3.convert("Java");
+        System.out.println(converted);    // "J"
 
         // 4 构造函数引用
         PersonFactory<Person> personFactory = Person::new;

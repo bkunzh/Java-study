@@ -1,4 +1,4 @@
-public class Test1 {
+public class Hello {
     public static void main(String[] args) {
 
         // Java 8之前：

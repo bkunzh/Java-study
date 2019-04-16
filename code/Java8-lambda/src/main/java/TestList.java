@@ -7,7 +7,7 @@ import java.util.function.Function;
 /**
  * Created by zhbk on 2019/2/23.
  */
-public class Test2 {
+public class TestList {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         list.add("bb");
