@@ -16,6 +16,7 @@
         <module>code/threadlocal</module>
         <module>code/reference</module>
         <module>code/java-util</module>
+        <module>code/think-in-java</module>
     </modules>
 
 
