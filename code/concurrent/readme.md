@@ -13,4 +13,10 @@
 //        }
 ```
 
+2. 一个Wait和NotifyAll的例子，多个线程互相唤醒、满足一定条件才继续
+> 见TestWaitAndNotifyAll
+
 ## [其它早期笔记](note.md)
+
+2. Object.wait/notify
+见lg架构师课程线程通信
