@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 /**
  * Created by zhbk on 2019/3/9.
  */
-public class Test {
+public class SuperclassTest {
     private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public static void main(String[] args) {
