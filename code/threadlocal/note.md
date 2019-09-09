@@ -24,7 +24,7 @@
 
 # 2. ThreadLocal实现
 ## 2.1 Thread
-**Thread**类中有一个ThreadLocalMap的实例变量threadLocals，包权限，键是ThreadLocal变量
+**Thread**类中有一个ThreadLocalMap的实例变量threadLocals，包权限，键是ThreadLocal引用，值是set的值
 > java5/java8都是这种实现，即Thread维护ThreadLocal与实例的映射，该方案没有锁的问题，每个线程访问某 ThreadLocal 变量后，都会在自己的 Map 内维护该 ThreadLocal 变量与具体实例的映射
 ```java
     ThreadLocal.ThreadLocalMap threadLocals = null;
@@ -186,6 +186,7 @@ public class SessionHandler {
   public static void main(String[] args) {
     new Thread(() -> {
       SessionHandler handler = new SessionHandler();
+      handler.createSession();
       handler.getStatus();
       handler.getUser();
       handler.setStatus("close");
