@@ -1,6 +1,8 @@
+package com.bkunzhang;
+
 import org.junit.Test;
 
-public class TestClassLoaderPath {
+public class ClassLoaderPathTest {
 
     @Test
     public void getProperty() {

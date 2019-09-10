@@ -1,3 +1,5 @@
+package com.bkunzhang;
+
 import org.junit.Test;
 
 public class ClassLoaderTest {
