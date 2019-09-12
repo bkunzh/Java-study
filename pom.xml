@@ -14,7 +14,7 @@
 
     <modules>
         <module>code/Java8-lambda</module>
-        <module>code/problems</module>
+        <module>code/property</module>
         <module>code/concurrent</module>
         <module>code/jdbc-batch-operate</module>
         <module>code/threadlocal</module>
@@ -22,6 +22,7 @@
         <module>code/java-util</module>
         <module>code/think-in-java</module>
         <module>code/classloader</module>
+        <module>code/socket</module>
     </modules>
 
     <dependencyManagement>
