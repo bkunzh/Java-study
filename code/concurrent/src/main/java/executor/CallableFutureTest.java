@@ -11,7 +11,25 @@ public class CallableFutureTest {
         ExecutorService executor = Executors.newCachedThreadPool();
         Task task = new Task();
         Future<Integer> result = executor.submit(task);
+
+        executor.submit(() -> {
+            long count = 0;
+            while (!result.isDone()) {
+                ++count;
+            }
+            System.out.println("count=" + count);
+            try {
+                System.out.println("task运行结果---"+result.get());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+
+        });
+
         executor.shutdown();
+
 
         try {
             Thread.sleep(1000);
@@ -22,6 +40,7 @@ public class CallableFutureTest {
         System.out.println("主线程在执行任务");
 
         try {
+            System.out.println("task运行结果"+result.get());
             System.out.println("task运行结果"+result.get());
         } catch (InterruptedException e) {
             e.printStackTrace();
