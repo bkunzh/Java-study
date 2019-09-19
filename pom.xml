@@ -23,6 +23,8 @@
         <module>code/think-in-java</module>
         <module>code/classloader</module>
         <module>code/socket</module>
+        <module>code/io</module>
+        <module>code/proxy</module>
     </modules>
 
     <dependencyManagement>
