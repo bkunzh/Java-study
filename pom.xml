@@ -25,6 +25,7 @@
         <module>code/socket</module>
         <module>code/io</module>
         <module>code/proxy</module>
+        <module>code/transaction</module>
     </modules>
 
     <dependencyManagement>
