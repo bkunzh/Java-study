@@ -7,6 +7,7 @@
 - [4. 弱引用](#4-弱引用)
 - [5. java.util.concurrent包](#5-javautilconcurrent包)
 - [6. JAVA实现长连接，含心跳检测](#6-java实现长连接含心跳检测)
+- [7. java-core 源码/基础理解](#7-java-core-源码基础理解)
 - [99. 一些说明](#99-一些说明)
 
 <!-- /TOC -->
@@ -43,6 +44,8 @@ CountDownLatch/CyclicBarrier/Semaphore
 # 6. JAVA实现长连接，含心跳检测
 - [代码](code/socket)
 
+# 7. java-core 源码/基础理解
+- [代码](code/java-core)
 # 99. 一些说明
 - 用IDEA的md编辑器，在` ```java``` `中的代码片段会报错。
     > 未找到很好的不报错的解决方法。所以在IDEA中编辑md文件时，用\`\`\`jav代替\`\`\`java，等到写好后，再用\`\`\`java替换\`\`\`jav即可。
