@@ -92,16 +92,10 @@ public class JdbcBatchAndNotBatch {
 
 
     public static void main(String[] args) {
-
-
         try {
             Class.forName("com.mysql.jdbc.Driver");
-
-
             batchInsert();
             oneByOneInsert();
-
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

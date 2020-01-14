@@ -27,6 +27,7 @@
         <module>code/proxy</module>
         <module>code/transaction</module>
         <module>code/java-core</module>
+        <module>code/jdbc</module>
     </modules>
 
     <dependencyManagement>
