@@ -1,3 +1,5 @@
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -21,6 +23,10 @@ public class UnitTestManyTime {
         return new Object[10][0]; // repeat count which you want
     }
 
+    @Before
+    public void before() {
+        System.out.println("before");
+    }
     @Test
     public void multiThread() throws InterruptedException {
         final int N = 20;
@@ -36,5 +42,9 @@ public class UnitTestManyTime {
             });
         }
         latch.await();
+    }
+    @After
+    public void after() {
+        System.out.println("after");
     }
 }
