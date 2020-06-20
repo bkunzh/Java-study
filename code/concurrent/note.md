@@ -6,6 +6,8 @@
 - [4. 总结](#4-总结)
 
 <!-- /TOC -->
+# 0. 单元测试执行多次
+单元测试执行多次，多线程每一次都可能不一样。见`UnitTestManyTime`
 # 1. CountDownLatch
 >CountDownLatch类位于java.util.concurrent包下，利用它可以实现类似计数器的功能。比如有一个任务A，它要等待其他4个任务执行完毕之后才能执行，此时就可以利用CountDownLatch来实现这种功能了。
 1. CountDownLatch类只提供了一个构造器：
