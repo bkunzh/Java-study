@@ -6,6 +6,9 @@
 - [4. 总结](#4-总结)
 
 <!-- /TOC -->
+# 其它地方的代码
+多线程练习：
+<https://github.com/bkunzh/lab/blob/master/concurrent/src/test/java>
 # 0. 单元测试执行多次
 单元测试执行多次，多线程每一次都可能不一样。见`UnitTestManyTime`
 # 1. CountDownLatch
