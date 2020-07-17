@@ -1,3 +1,5 @@
+package com.mongo;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

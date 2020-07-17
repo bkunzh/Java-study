@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="my-appender" class="ch.qos.logback.core.FileAppender">
+		<file>f:/log/mongo.log</file>
+		<encoder>
+			<pattern>%date %level [%thread] %logger{50} \(%file:%line\) %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<appender name="cosole" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%date %level [%thread] %logger{50} \(%file:%line\) %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="test" level="DEBUG">
+		<appender-ref ref="cosole" />
+		<appender-ref ref="my-appender" />
+	</logger>
+	<root level="INFO">
+		<appender-ref ref="cosole" />
+		<appender-ref ref="my-appender" />
+	</root>
+
+
+</configuration>
