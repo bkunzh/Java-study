@@ -13,5 +13,6 @@ public class LogTest {
     public void t1() {
         Logger logger = LoggerFactory.getLogger(Object.class);
         logger.info("log info t");
+        logger.error("log error t");
     }
 }
