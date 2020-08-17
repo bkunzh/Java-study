@@ -32,6 +32,10 @@
         <module>code/io</module>
         <module>code/exception</module>
         <module>code/hutool</module>
+        <module>code/redis</module>
+        <module>code/mongodb</module>
+        <module>code/apache-commons</module>
+        <module>code/log-lib</module>
     </modules>
 
     <dependencyManagement>
@@ -47,6 +51,17 @@
             <version>4.12</version>
         </dependency>
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

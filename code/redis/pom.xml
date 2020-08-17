@@ -10,15 +10,21 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>java-core</artifactId>
+    <groupId>com.bkunzhang</groupId>
+    <artifactId>redis</artifactId>
+
 
     <dependencies>
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
-            <scope>compile</scope>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>2.2.3.RELEASE</version>
+        </dependency>
 
+    </dependencies>
 </project>
