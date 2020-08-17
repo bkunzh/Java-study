@@ -33,6 +33,8 @@
         <module>code/exception</module>
         <module>code/redis</module>
         <module>code/mongodb</module>
+        <module>code/apache-commons</module>
+        <module>code/log-lib</module>
     </modules>
 
     <dependencyManagement>
