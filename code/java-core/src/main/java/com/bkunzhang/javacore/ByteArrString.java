@@ -16,6 +16,20 @@ public class ByteArrString {
     static Logger logger = LoggerFactory.getLogger(ByteArrString.class);
 
     @Test
+    public void gbk() {
+        String s = "网";
+        byte[] bs = s.getBytes(Charset.forName("GB2312"));
+//        byte[] bs = s.getBytes(Charset.forName("GBK"));
+        logger.info(Arrays.toString(bs));
+        s = new String(bs, Charset.forName("GBK"));
+        logger.info(s);
+
+        bs = new byte[] {-51, -8};
+        s = new String(bs, Charset.forName("GBK"));
+        logger.info(s);
+    }
+
+    @Test
     public void t1() throws UnsupportedEncodingException {
         String s = "广";
         byte[] bs = s.getBytes(); // 3个字节

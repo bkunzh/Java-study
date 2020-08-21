@@ -31,6 +31,7 @@
         <module>code/test</module>
         <module>code/io</module>
         <module>code/exception</module>
+        <module>code/hutool</module>
         <module>code/redis</module>
         <module>code/mongodb</module>
         <module>code/apache-commons</module>
