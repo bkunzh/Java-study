@@ -16,9 +16,56 @@ public class AESUtil {
     public static String DEFAULT_IV = "AD42F6697B035B75";
     private static String DEFAULT_CHARSET = "utf-8";
     // 偏移量
-    private static int offset = 16;
-    private static String transformation = "AES/CBC/PKCS5Padding";
-    private static String algorithm = "AES";
+    private static int OFFSET = 16;
+    private static String TRANSFORMATION = "AES/CBC/PKCS5Padding";
+    private static String ALGORITHM = "AES";
+
+    /**
+     * 加密
+     *
+     * @param content 需要加密的内容
+     * @param key 加密密码
+     * @param iv
+     * @return
+     */
+    public static String encrypt(String content, String key, String iv) {
+        try {
+            SecretKeySpec skey = new SecretKeySpec(key.getBytes(Charset.forName(DEFAULT_CHARSET)), ALGORITHM);
+            IvParameterSpec ivSpec = new IvParameterSpec(iv.getBytes(), 0, OFFSET);
+            Cipher cipher = Cipher.getInstance(TRANSFORMATION);
+            byte[] byteContent = content.getBytes(DEFAULT_CHARSET);
+            cipher.init(Cipher.ENCRYPT_MODE, skey, ivSpec);// 初始化
+            byte[] result = cipher.doFinal(byteContent);
+            return new Base64().encodeToString(result); // 加密
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * AES（256）解密
+     *
+     * @param content 待解密内容
+     * @param key 解密密钥
+     * @param iv
+     * @return 解密之后
+     * @throws Exception
+     */
+    public static String decrypt(String content, String key, String iv) {
+        try {
+
+            SecretKeySpec skey = new SecretKeySpec(key.getBytes(Charset.forName(DEFAULT_CHARSET)), ALGORITHM);
+            IvParameterSpec ivSpec = new IvParameterSpec(iv.getBytes(Charset.forName(DEFAULT_CHARSET)), 0, OFFSET);
+            Cipher cipher = Cipher.getInstance(TRANSFORMATION);
+            cipher.init(Cipher.DECRYPT_MODE, skey, ivSpec);// 初始化
+            byte[] result = cipher.doFinal(new Base64().decode(content));
+            return new String(result, Charset.forName(DEFAULT_CHARSET)); // 解密
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     /**
      * 加密
@@ -38,50 +85,5 @@ public class AESUtil {
      */
     public static String decrypt(String content) {
         return decrypt(content, DEFAULT_KEY, DEFAULT_IV);
-    }
-
-    /**
-     * 加密
-     *
-     * @param content 需要加密的内容
-     * @param key 加密密码
-     * @return
-     */
-    public static String encrypt(String content, String key, String iv) {
-        try {
-            SecretKeySpec skey = new SecretKeySpec(key.getBytes(Charset.forName(DEFAULT_CHARSET)), algorithm);
-            IvParameterSpec ivSpec = new IvParameterSpec(iv.getBytes(), 0, offset);
-            Cipher cipher = Cipher.getInstance(transformation);
-            byte[] byteContent = content.getBytes(DEFAULT_CHARSET);
-            cipher.init(Cipher.ENCRYPT_MODE, skey, ivSpec);// 初始化
-            byte[] result = cipher.doFinal(byteContent);
-            return new Base64().encodeToString(result); // 加密
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
-     * AES（256）解密
-     *
-     * @param content 待解密内容
-     * @param key 解密密钥
-     * @return 解密之后
-     * @throws Exception
-     */
-    public static String decrypt(String content, String key, String iv) {
-        try {
-
-            SecretKeySpec skey = new SecretKeySpec(key.getBytes(Charset.forName(DEFAULT_CHARSET)), algorithm);
-            IvParameterSpec ivSpec = new IvParameterSpec(iv.getBytes(Charset.forName(DEFAULT_CHARSET)), 0, offset);
-            Cipher cipher = Cipher.getInstance(transformation);
-            cipher.init(Cipher.DECRYPT_MODE, skey, ivSpec);// 初始化
-            byte[] result = cipher.doFinal(new Base64().decode(content));
-            return new String(result, Charset.forName(DEFAULT_CHARSET)); // 解密
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 }
