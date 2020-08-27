@@ -9,7 +9,7 @@ public class AESUtilTest {
 
     @Test
     public void test() {
-        String s = "加密测试";
+        String s = "加密  测试加密  测试加密  测试加密  测试加密  测试加密  测试加密  测试";
         // 加密  默认key
         logger.info("加密前：" + s);
         String encryptResultStr1 = AESUtil.encrypt(s);
