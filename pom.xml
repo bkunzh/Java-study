@@ -37,6 +37,7 @@
         <module>code/apache-commons</module>
         <module>code/log-lib</module>
         <module>code/kotlin-study</module>
+        <module>code/encode</module>
     </modules>
 
     <dependencyManagement>
