@@ -11,6 +11,8 @@ public class AESUtilTest {
     @Test
     public void test() {
         String s = "加密  测试加密  测试加密  测试加密  测试加密  测试加密  测试加密  测试";
+        String enStr = AESUtil.encrypt(s, "34jka2djfuier@34", "kjadf2aa83474237");
+        logger.info("1：" + enStr);
         // 加密  默认key
         logger.info("加密前：" + s);
         String encryptResultStr1 = AESUtil.encrypt(s);

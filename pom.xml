@@ -38,6 +38,7 @@
         <module>code/log-lib</module>
         <module>code/kotlin-study</module>
         <module>code/encode</module>
+        <module>java-parent</module>
     </modules>
 
     <dependencyManagement>
