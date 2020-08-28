@@ -38,6 +38,7 @@
         <module>code/log-lib</module>
         <module>code/kotlin-study</module>
         <module>code/encode</module>
+        <module>code/encode2</module>
     </modules>
 
     <dependencyManagement>
@@ -51,6 +52,11 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
         </dependency>
     </dependencies>
     <build>
