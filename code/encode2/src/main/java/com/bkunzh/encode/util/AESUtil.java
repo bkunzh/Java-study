@@ -1,4 +1,4 @@
-package com.bkunzh.encode;
+package com.bkunzh.encode.util;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;

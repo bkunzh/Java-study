@@ -1,5 +1,6 @@
 package com.bkunzh.encode;
 
+import com.bkunzh.encode.util.AESUtil;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
