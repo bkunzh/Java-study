@@ -12,7 +12,7 @@ import java.nio.charset.Charset;
 public class AESUtil {
 
     // 密钥
-    public static String DEFAULT_KEY = "AD42F6697B035B7580E4FEF93BE20BAD"; //长度必须为16、24、32位，即128bit、192bit、256bit
+    public static String DEFAULT_KEY = "UTAJUIWIR72842AA"; //长度必须为16、24、32位，即128bit、192bit、256bit
     public static String DEFAULT_IV = "AD42F6697B035B75";
     private static String DEFAULT_CHARSET = "utf-8";
     // 偏移量

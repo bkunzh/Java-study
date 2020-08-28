@@ -30,11 +30,9 @@ public class AESUtilTest {
 
         logger.info("加密后：" + AESUtil.encrypt("test", AESUtil.DEFAULT_KEY, AESUtil.DEFAULT_IV));
         logger.info("解密后：" + AESUtil.decrypt(AESUtil.encrypt("test", AESUtil.DEFAULT_KEY, AESUtil.DEFAULT_IV), AESUtil.DEFAULT_KEY, AESUtil.DEFAULT_IV));
-        String mykey = "01234567890123450123456789012345";
+        String mykey = "0123456789050123";
         logger.info("32位密钥加密测试：" + AESUtil.encrypt("当我们把密钥定为大于128时（即192或256）时",mykey, AESUtil.DEFAULT_IV));
         logger.info("32位密钥解密测试：" + AESUtil.decrypt(AESUtil.encrypt("当我们把密钥定为大于128时（即192或256）时", mykey, AESUtil.DEFAULT_IV), mykey, AESUtil.DEFAULT_IV));
 
-        logger.info(AESUtil.decrypt("iGpM7yvoqVwrVSZmpB2DejheFXCAsq4a6YAgggCccsK6s98UVYb/8VtqWAg0OTj27AqOOcW9hNmu\n" +
-                "aTZacUby3Q==  \n", mykey, AESUtil.DEFAULT_IV));
     }
 }
