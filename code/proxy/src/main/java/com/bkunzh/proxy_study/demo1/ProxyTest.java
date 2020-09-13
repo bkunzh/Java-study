@@ -1,5 +1,8 @@
-package com.bkunzhang.proxy;
+package com.bkunzh.proxy_study.demo1;
 
+import com.bkunzh.proxy_study.demo1.UserService;
+import com.bkunzh.proxy_study.demo1.UserServiceHandler;
+import com.bkunzh.proxy_study.demo1.UserServiceImpl;
 import org.junit.Test;
 
 import java.lang.reflect.Proxy;
