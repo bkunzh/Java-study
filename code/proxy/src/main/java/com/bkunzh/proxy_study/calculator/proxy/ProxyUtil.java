@@ -15,24 +15,24 @@ import java.util.Arrays;
  *
  * 在spring中使用了两种动态代理的方式，一种是jdk提供的（刚刚完成的）另外一种就是cglib
  */
-public class CalculatorProxy {
+public class ProxyUtil {
 
-    public static Calculator getProxy(final Calculator calculator){
+    public static Object getProxy(final Object object){
 
         //获取被代理对象的类加载器
-        ClassLoader loader = calculator.getClass().getClassLoader();
+        ClassLoader loader = object.getClass().getClassLoader();
         //被代理对象的所有接口
-        Class<?>[] interfaces = calculator.getClass().getInterfaces();
+        Class<?>[] interfaces = object.getClass().getInterfaces();
         //用来执行被代理类需要执行的方法
         InvocationHandler handler = new InvocationHandler() {
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 Object result = null;
                 try{
-                     System.out.println(method.getName()+"方法开始执行，参数列表是："+ Arrays.asList(args));
+                     System.out.println("类"+object.getClass().getSimpleName()+":"+method.getName()+"方法开始执行，参数列表是："+ Arrays.asList(args));
 //                    LogUtil.start(method,args);
                     //开始调用被代理类的方法
                     //start
-                    result = method.invoke(calculator,args);
+                    result = method.invoke(object,args);
                     //end
                     System.out.println(method.getName()+"方法执行完成，结果是："+result);
 //                    LogUtil.stop(method,result);
@@ -47,7 +47,7 @@ public class CalculatorProxy {
             }
         };
         Object o = Proxy.newProxyInstance(loader, interfaces, handler);
-        return (Calculator) o;
+        return o;
     }
 
 }
