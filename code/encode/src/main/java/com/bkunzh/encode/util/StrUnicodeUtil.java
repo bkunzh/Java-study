@@ -83,5 +83,7 @@ public class StrUnicodeUtil {
         System.out.println(unicodeStr2String(str2));
         System.out.println(unicodeStr2String("中国\\u61HJ你好\\u62\\u63(sfkfdsl)"));
         System.out.println("\u0061\u0062\u0063\u4e2d\u56fd");
+        System.out.println(string2Unicode("✔"));
+        System.out.println("\u2714");
     }
 }
