@@ -11,7 +11,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(int a) {
+    public final void delete(int a) {
         System.out.println("模拟删除:" + a);
     }
 }
