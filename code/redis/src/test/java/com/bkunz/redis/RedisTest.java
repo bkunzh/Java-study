@@ -11,9 +11,7 @@ import redis.clients.jedis.Jedis;
 public class RedisTest {
     @Test
     public void t() {
-//        Jedis jedis = new Jedis("172.20.176.213", 6379);
         Jedis jedis = new Jedis("127.0.0.1", 6380);
-//        jedis.auth("kdzwytest");
         jedis.auth("kk");
 
         final String lock = "lock:reminderTask";
