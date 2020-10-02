@@ -1,0 +1,1 @@
+使用import scope解决maven继承（单）问题
