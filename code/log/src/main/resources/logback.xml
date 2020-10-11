@@ -9,12 +9,29 @@
         </filter>-->
         <encoder>
             <pattern>%date %level [%thread] %logger{50}.%M \(%file:%line\) %msg%n</pattern>
+<!--            <charset>UTF-8</charset>-->
+            <charset>GBK</charset>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>mylogs/java-study-log.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>mylogs/java-study-log-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- each file should be at most 10MB, keep 60 days worth of history, but at most 10GB -->
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>60</maxHistory>
+            <totalSizeCap>200GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date %level [%thread] %logger{50}.%M \(%file:%line\) %msg%n</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
 
-    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>java-study-log.log</file>
+    <appender name="STDOUT_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>mylogs/java-study-log-console.log</file>
         <encoder>
             <pattern>%date %level [%thread] %logger{50}.%M \(%file:%line\) %msg%n</pattern>
             <charset>UTF-8</charset>
@@ -27,6 +44,8 @@
 
     <logger name="com.bkunzh.console_log">
         <appender-ref ref="STDOUT" />
+        <!-- 控制台不要打太多日志，同时把控制台的日志保存到文件 -->
+        <appender-ref ref="STDOUT_FILE" />
     </logger>
 
 </configuration>
