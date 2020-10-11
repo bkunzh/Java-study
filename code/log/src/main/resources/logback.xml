@@ -20,7 +20,7 @@
             <!-- rollover daily -->
             <fileNamePattern>mylogs/java-study-log-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <!-- each file should be at most 10MB, keep 60 days worth of history, but at most 10GB -->
-            <maxFileSize>100MB</maxFileSize>
+            <maxFileSize>20MB</maxFileSize>
             <maxHistory>60</maxHistory>
             <totalSizeCap>200GB</totalSizeCap>
         </rollingPolicy>
