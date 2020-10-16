@@ -5,3 +5,7 @@
  */
 @PackageAnno(value = "aa8", names = {"t1", "t2"})
 package com.bkun.my;
+
+class MyA {
+    static final String NAME = "tt";
+}
