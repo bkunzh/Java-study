@@ -1,4 +1,4 @@
-package com.bkun.my;
+package com.bkun.packageinfo;
 
 import java.util.Arrays;
 
@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class PackageInfoTest {
     public static void main(String[] args) {
-        Package aPackage = Package.getPackage("com.bkun.my");
+        Package aPackage = Package.getPackage("com.bkun.packageinfo");
         PackageAnno anno = aPackage.getAnnotation(PackageAnno.class);
         if (anno != null) {
             System.out.println(anno.value());

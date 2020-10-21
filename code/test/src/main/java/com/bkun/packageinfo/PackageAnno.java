@@ -1,4 +1,4 @@
-package com.bkun.my;
+package com.bkun.packageinfo;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
